@@ -4,7 +4,8 @@ import { getNotes } from "./noteAction";
 
 const initialState = {
     notes: [],
-    updateModal: false
+    updateModal: false,
+    noteToBeUpdated: {}
 }
 
 const noteSlice = createSlice({
@@ -16,6 +17,12 @@ const noteSlice = createSlice({
         },
         closeUpdateModel: (state) => {
             state.updateModal = false
+        },
+        populateUpdateModel: (state, action) => {
+            const filteredNote = state.notes.filter((note) => {
+                return note._id === action.payload
+            })
+            state.noteToBeUpdated = filteredNote[0]
         }
     },
     extraReducers: (builder) => {
@@ -25,7 +32,7 @@ const noteSlice = createSlice({
     }
 })
 
-export const { openUpdateModal, closeUpdateModel } = noteSlice.actions;
+export const { openUpdateModal, closeUpdateModel, populateUpdateModel } = noteSlice.actions;
 
 
 export default noteSlice.reducer;

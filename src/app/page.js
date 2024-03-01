@@ -23,7 +23,7 @@ export default function Home() {
         <div className="grid grid-cols-3 gap-4 mt-4 ml-3 py-5 px-4">
           {notes.map((note, index) => {
             return (
-              <NoteCard key={index} description={note.description} createdAt={note.createdAt} />
+              <NoteCard key={index} id={note._id} description={note.description} createdAt={note.createdAt} />
             )
           })}
         </div>
