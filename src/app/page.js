@@ -10,6 +10,7 @@ export default function Home() {
   const notes = useSelector((state) => state.notes.notes)
   const dispatch = useDispatch()
 
+
   useEffect(() => {
     dispatch(getNotes())
   }, [])

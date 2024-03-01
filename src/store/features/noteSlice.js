@@ -3,19 +3,26 @@ import { getNotes } from "./noteAction";
 
 
 const initialState = {
-    notes: []
+    notes: [],
+    updateModal: false
 }
 
 const noteSlice = createSlice({
     name: "notes",
     initialState,
-    reducers: {},
+    reducers: {
+        openUpdateModal: (state) => {
+            state.updateModal = true
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(getNotes.fulfilled, (state, action) => {
             state.notes = action.payload
         })
     }
 })
+
+export const { openUpdateModal } = noteSlice.actions;
 
 
 export default noteSlice.reducer;
