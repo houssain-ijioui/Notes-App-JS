@@ -5,6 +5,7 @@ import { getNotes } from "@/store/features/noteAction";
 import Navbar from "@/components/Navbar";
 import NoteCard from "@/components/NoteCard";
 import Sidebar from "@/components/Sidebar";
+import UpdateModal from "@/components/UpdateModal";
 
 export default function Home() {
   const notes = useSelector((state) => state.notes.notes)
@@ -26,6 +27,7 @@ export default function Home() {
             )
           })}
         </div>
+        <UpdateModal />
       </div>
     </div>
   );

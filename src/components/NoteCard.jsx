@@ -7,15 +7,13 @@ import { useDispatch, useSelector } from 'react-redux';
 const NoteCard = ({ description, createdAt }) => {
 
   const dispatch = useDispatch()
-
   const handleUpdate = () => {
     dispatch(openUpdateModal())
   }
 
 
-
   return (
-    <div className='bg-orange-300 py-5 px-2 rounded-lg h-72 flex flex-col justify-between'>
+    <div className='bg-lightOrange py-5 px-2 rounded-lg h-72 flex flex-col justify-between'>
       <div>
         <h3 className='border-b-2 border-gray-500 px-5'>{createdAt}</h3>
         <p className='whitespace-normal break-all px-5 py-4'>{description}</p>

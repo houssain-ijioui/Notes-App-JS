@@ -1,16 +1,10 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 
 
 const Addbutton = () => {
-    const dispatch = useDispatch()
-
-    const openModal = () => {
-      dispatch()
-    }
 
   return (
-    <button onClick={openModal} className="group cursor-pointer outline-none hover:rotate-90 duration-300" title="Add New">
+    <button className="group cursor-pointer outline-none hover:rotate-90 duration-300" title="Add New">
     <svg
       className="stroke-stone-950 fill-none group-hover:stroke-stone-950 group-active:stroke-stone-950 group-active:duration-0 duration-300"
       viewBox="0 0 24 24"

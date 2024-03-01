@@ -13,6 +13,9 @@ const noteSlice = createSlice({
     reducers: {
         openUpdateModal: (state) => {
             state.updateModal = true
+        },
+        closeUpdateModel: (state) => {
+            state.updateModal = false
         }
     },
     extraReducers: (builder) => {
@@ -22,7 +25,7 @@ const noteSlice = createSlice({
     }
 })
 
-export const { openUpdateModal } = noteSlice.actions;
+export const { openUpdateModal, closeUpdateModel } = noteSlice.actions;
 
 
 export default noteSlice.reducer;
