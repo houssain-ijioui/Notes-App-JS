@@ -2,9 +2,9 @@ import React from 'react';
 import { Button } from 'flowbite-react';
 
 
-const PrimaryButton = ({ onClick, color, text }) => {
+const PrimaryButton = ({ onClick, color, text, type }) => {
   return (
-    <Button onClick={onClick} className={`lg:col-span-2 col-span-full ${color} pt-2 text-center`}>{text}</Button>
+    <Button type={type} onClick={onClick} className={`lg:col-span-2 col-span-full ${color} pt-2 text-center`}>{text}</Button>
   )
 }
 
