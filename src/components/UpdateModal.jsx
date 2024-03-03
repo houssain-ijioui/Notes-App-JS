@@ -46,9 +46,9 @@ const UpdateModal = ({ bgColor }) => {
                   <textarea value={newDescription} onChange={(e) => setNewDescription(e.target.value)} className={`w-full p-2 border h-56 rounded-l resize-none ${updateModalColor}`} placeholder="Enter note description ..." required></textarea>
                 </div>
               </div>
-              <div className='w-full grid grid-cols-4 gap-4'>
+              <div className='w-full flex flex-row justify-center'>
                 <PrimaryButton onClick={() => dispatch(closeUpdateModel())} color={"bg-red-700"} text={"Cancel"} />
-                <PrimaryButton onClick={handleUpdate} color={"bg-buttonColor"} text={"Update Note"} />
+                <PrimaryButton onClick={handleUpdate} color={"bg-darkButton"} text={"Update Note"} />
               </div>
             </form>
           </div>
