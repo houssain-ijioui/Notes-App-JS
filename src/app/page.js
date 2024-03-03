@@ -6,10 +6,10 @@ import Navbar from "@/components/Navbar";
 import NoteCard from "@/components/NoteCard";
 import Sidebar from "@/components/Sidebar";
 import UpdateModal from "@/components/UpdateModal";
-import next from "next";
+
 
 export default function Home() {
-  const notes = useSelector((state) => state.notes.notes)
+  const {notes, updateModal} = useSelector((state) => state.notes)
   const dispatch = useDispatch()
 
   const bgColors = ["bg-lightOrange", "bg-buttonColor", "bg-secondOrange", "bg-firstBlue", "bg-thirdOrange", "bg-lila"]
@@ -24,11 +24,11 @@ export default function Home() {
     dispatch(getNotes())
   }, [])
   return (
-    <div className="">
+    <div className={updateModal ? 'filter blur-sm': ''} >
       <Navbar />
       <div className="flex flex-row">
         <Sidebar />
-        <div className="grid grid-cols-3 gap-4 mt-4 ml-3 py-5 px-4">
+        <div className="grid grid-cols-3 gap-4 ml-20 py-5 pr-4">
           {notes.map((note, index) => {
             return (
               <NoteCard key={index} id={note._id} description={note.description} createdAt={note.createdAt} bgColor={getNextColor()} />

@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.filter {
+    transition: filter 0.1s ease;
+}
