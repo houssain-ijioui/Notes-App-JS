@@ -14,7 +14,11 @@ module.exports = {
       },
       colors: {
         lightOrange: "#FDBA74",
-        buttonColor: "#BFC97D"
+        buttonColor: "#BFC97D",
+        secondOrange: "#FE9C74",
+        firstBlue: "#02C2E6",
+        thirdOrange: "#FE9C74",
+        lila: "#B693F7"
       }
     },
   },

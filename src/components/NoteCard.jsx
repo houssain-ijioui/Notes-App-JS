@@ -4,7 +4,7 @@ import { openUpdateModal, populateUpdateModel } from '@/store/features/noteSlice
 import { useDispatch, useSelector } from 'react-redux';
 
 
-const NoteCard = ({ description, createdAt, id }) => {
+const NoteCard = ({ description, createdAt, id, bgColor }) => {
 
   const dispatch = useDispatch()
   const handleUpdate = (id) => {
@@ -14,7 +14,7 @@ const NoteCard = ({ description, createdAt, id }) => {
 
 
   return (
-    <div className='bg-lightOrange py-5 px-2 rounded-lg h-72 flex flex-col justify-between'>
+    <div className={`bg-${bgColor} py-5 px-2 rounded-lg h-72 flex flex-col justify-between`}>
       <div>
         <h3 className='border-b-2 border-gray-500 px-5'>{createdAt}</h3>
         <p className='whitespace-normal break-all px-5 py-4'>{description}</p>
