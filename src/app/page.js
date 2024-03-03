@@ -6,10 +6,10 @@ import Navbar from "@/components/Navbar";
 import NoteCard from "@/components/NoteCard";
 import Sidebar from "@/components/Sidebar";
 import UpdateModal from "@/components/UpdateModal";
-import next from "next";
+
 
 export default function Home() {
-  const notes = useSelector((state) => state.notes.notes)
+  const {notes, updateModal} = useSelector((state) => state.notes)
   const dispatch = useDispatch()
 
   const bgColors = ["bg-lightOrange", "bg-buttonColor", "bg-secondOrange", "bg-firstBlue", "bg-thirdOrange", "bg-lila"]
@@ -24,7 +24,7 @@ export default function Home() {
     dispatch(getNotes())
   }, [])
   return (
-    <div className="">
+    <div className={updateModal ? 'filter blur-sm': ''} >
       <Navbar />
       <div className="flex flex-row">
         <Sidebar />
