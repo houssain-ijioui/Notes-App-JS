@@ -12,7 +12,7 @@ export default function Home() {
   const notes = useSelector((state) => state.notes.notes)
   const dispatch = useDispatch()
 
-  const bgColors = ["lightOrange", "buttonColor", "secondOrange", "firstBlue", "thirdOrange", "lila"]
+  const bgColors = ["bg-lightOrange", "bg-buttonColor", "bg-secondOrange", "bg-firstBlue", "bg-thirdOrange", "bg-lila"]
   let colorIndex = 0;
   function getNextColor() {
     const nextColor = bgColors[colorIndex];
@@ -35,7 +35,7 @@ export default function Home() {
             )
           })}
         </div>
-        <UpdateModal bgColor={getNextColor()} />
+        <UpdateModal />
       </div>
     </div>
   );
