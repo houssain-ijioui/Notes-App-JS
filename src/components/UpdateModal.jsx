@@ -1,15 +1,32 @@
 'use client';
 import { closeUpdateModel } from '@/store/features/noteSlice';
-import { Button, Label, Modal } from 'flowbite-react';
+import { Modal } from 'flowbite-react';
 import { useSelector, useDispatch } from 'react-redux';
 import PrimaryButton from './PrimaryButton';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { getNotes } from "@/store/features/noteAction";
 
 const UpdateModal = () => {
   const openModal = useSelector((state) => state.notes.updateModal)
   const noteToBeUpdated = useSelector((state) => state.notes.noteToBeUpdated)
+  const updatedNoteId = useSelector((state) => state.notes.updatedNoteId)
   const [ newDescription, setNewDescription ] = useState("")
   const dispatch = useDispatch();
+
+  const handleUpdate = useCallback(async (e) => {
+    try {
+      await fetch(`http://localhost:3000/api/notes/${updatedNoteId}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          description: newDescription
+        }), 
+      })
+      dispatch(closeUpdateModel())
+      dispatch(getNotes())
+    } catch (error) {
+      console.log("Updating Error", error);
+    }
+  }, [dispatch, newDescription, updatedNoteId])
 
   useEffect(() => {
     setNewDescription(noteToBeUpdated)
@@ -30,7 +47,7 @@ const UpdateModal = () => {
               </div>
               <div className='w-full grid grid-cols-4 gap-4'>
                 <PrimaryButton onClick={() => dispatch(closeUpdateModel())} color={"bg-red-700"} text={"Cancel"} />
-                <PrimaryButton type={"submit"} color={"bg-buttonColor"} text={"Add Note"} />
+                <PrimaryButton onClick={handleUpdate} color={"bg-buttonColor"} text={"Update Note"} />
               </div>
             </form>
           </div>

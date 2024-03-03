@@ -23,11 +23,15 @@ export async function PUT(request, context) {
     try {
         const data = await request.json()
         const { id } = context.params
-        await Note.findByIdAndUpdate(id, { description: data.description })
+        const update = {
+            description: data.description
+        }
+        await Note.findByIdAndUpdate(id, update)
         return NextResponse.json({
             message: `${id} Updated`
         })
     } catch (error) {
+        console.log(error);
         return NextResponse.json({
             message: `Oops something went wrong`
         })

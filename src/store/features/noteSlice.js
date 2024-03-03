@@ -5,7 +5,8 @@ import { getNotes } from "./noteAction";
 const initialState = {
     notes: [],
     updateModal: false,
-    noteToBeUpdated: ""
+    noteToBeUpdated: "",
+    updatedNoteId: null
 }
 
 const noteSlice = createSlice({
@@ -23,6 +24,7 @@ const noteSlice = createSlice({
                 return note._id === action.payload
             })
             state.noteToBeUpdated = filteredNote[0].description
+            state.updatedNoteId = action.payload
         }
     },
     extraReducers: (builder) => {
