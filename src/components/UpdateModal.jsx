@@ -10,6 +10,7 @@ const UpdateModal = ({ bgColor }) => {
   const openModal = useSelector((state) => state.notes.updateModal)
   const noteToBeUpdated = useSelector((state) => state.notes.noteToBeUpdated)
   const updatedNoteId = useSelector((state) => state.notes.updatedNoteId)
+  const updateModalColor  = useSelector((state) => state.notes.updateModalColor)
   const [ newDescription, setNewDescription ] = useState("")
   const dispatch = useDispatch();
 
@@ -37,12 +38,12 @@ const UpdateModal = ({ bgColor }) => {
   return (
     <>
       <Modal show={openModal} size="md" popup>
-        <Modal.Body className={`bg-lightOrange rounded-xl w-5/12 m-auto mt-32 p-5`}>
+        <Modal.Body className={`${updateModalColor} rounded-xl w-5/12 m-auto mt-32 p-5`}>
           <div className=''>
             <form o className="mx-auto text-customblue rounded-xl">
               <div>
                 <div className="mb-2 block">
-                  <textarea value={newDescription} onChange={(e) => setNewDescription(e.target.value)} className={`w-full p-2 border h-56 rounded-l resize-none bg-lightOrange`} placeholder="Enter note description ..." required></textarea>
+                  <textarea value={newDescription} onChange={(e) => setNewDescription(e.target.value)} className={`w-full p-2 border h-56 rounded-l resize-none ${updateModalColor}`} placeholder="Enter note description ..." required></textarea>
                 </div>
               </div>
               <div className='w-full grid grid-cols-4 gap-4'>

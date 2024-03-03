@@ -6,7 +6,8 @@ const initialState = {
     notes: [],
     updateModal: false,
     noteToBeUpdated: "",
-    updatedNoteId: null
+    updatedNoteId: null,
+    updateModalColor: ""
 }
 
 const noteSlice = createSlice({
@@ -25,6 +26,9 @@ const noteSlice = createSlice({
             })
             state.noteToBeUpdated = filteredNote[0].description
             state.updatedNoteId = action.payload
+        },
+        fillUpdateModalColor: (state, action) => {
+            state.updateModalColor = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -34,7 +38,7 @@ const noteSlice = createSlice({
     }
 })
 
-export const { openUpdateModal, closeUpdateModel, populateUpdateModel } = noteSlice.actions;
+export const { openUpdateModal, closeUpdateModel, populateUpdateModel, fillUpdateModalColor } = noteSlice.actions;
 
 
 export default noteSlice.reducer;

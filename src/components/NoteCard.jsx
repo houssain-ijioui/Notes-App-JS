@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaPen } from "react-icons/fa6";
-import { openUpdateModal, populateUpdateModel } from '@/store/features/noteSlice';
+import { openUpdateModal, populateUpdateModel, fillUpdateModalColor } from '@/store/features/noteSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -10,6 +10,7 @@ const NoteCard = ({ description, createdAt, id, bgColor }) => {
   const handleUpdate = (id) => {
     dispatch(openUpdateModal())
     dispatch(populateUpdateModel(id))
+    dispatch(fillUpdateModalColor(bgColor))
   }
 
 
