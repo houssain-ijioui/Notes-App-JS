@@ -4,7 +4,7 @@ import Addbutton from './addbutton';
 
 const Sidebar = () => {
   return (
-    <div className='pt-4 px-2'>
+    <div className='pt-4 px-2 fixed'>
         <Addbutton />
     </div>
   )

@@ -28,7 +28,7 @@ export default function Home() {
       <Navbar />
       <div className="flex flex-row">
         <Sidebar />
-        <div className="grid grid-cols-3 gap-4 mt-4 ml-3 py-5 px-4">
+        <div className="grid grid-cols-3 gap-4 ml-20 py-5 pr-4">
           {notes.map((note, index) => {
             return (
               <NoteCard key={index} id={note._id} description={note.description} createdAt={note.createdAt} bgColor={getNextColor()} />
