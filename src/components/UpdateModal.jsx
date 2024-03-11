@@ -6,6 +6,7 @@ import PrimaryButton from './PrimaryButton';
 import { useCallback, useEffect, useState } from 'react';
 import { getNotes } from "@/store/features/noteAction";
 
+
 const UpdateModal = ({ bgColor }) => {
   const openModal = useSelector((state) => state.notes.updateModal)
   const noteToBeUpdated = useSelector((state) => state.notes.noteToBeUpdated)
