@@ -12,12 +12,12 @@ const CreateModal = () => {
   return (
     <>
       <Modal show={openModal} size="md" popup>
-        <Modal.Body className={`bg-firstBlue rounded-xl w-5/12 m-auto mt-32 p-5`}>
+        <Modal.Body className={`bg-lightOrange rounded-xl w-5/12 m-auto mt-32 p-5`}>
           <div className=''>
             <form o className="mx-auto text-customblue rounded-xl">
               <div>
                 <div className="mb-2 block">
-                  <textarea className={`w-full p-2 border h-56 rounded-l resize-none bg-firstBlue`} placeholder="Enter note description ..." required></textarea>
+                  <textarea className={`w-full p-2 border h-56 rounded-l resize-none bg-lightOrange`} placeholder="Enter note description ..." required></textarea>
                 </div>
               </div>
               <div className='w-full flex flex-row justify-center'>
