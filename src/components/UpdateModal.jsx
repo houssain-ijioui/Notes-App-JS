@@ -15,7 +15,7 @@ const UpdateModal = ({ bgColor }) => {
   const [ newDescription, setNewDescription ] = useState("")
   const dispatch = useDispatch();
 
-  const handleUpdate = useCallback(async (e) => {
+  const handleUpdate = useCallback(async () => {
     try {
       await fetch(`http://localhost:3000/api/notes/${updatedNoteId}`, {
         method: "PUT",
