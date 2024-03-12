@@ -21,6 +21,7 @@ const CreateModal = () => {
       })
       dispatch(closeCreateModal())
       dispatch(getNotes())
+      setDescription('')
     } 
 
   return (
