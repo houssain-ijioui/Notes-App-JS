@@ -4,7 +4,7 @@ import "@/lib/connectDB"
 
 
 export async function GET(request) {
-    const notes = await Note.find()
+    const notes = await Note.find().sort({ createdAt: -1 });
     return NextResponse.json(notes)
 }
 
